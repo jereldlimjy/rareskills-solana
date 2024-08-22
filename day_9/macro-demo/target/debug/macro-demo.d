@@ -1,0 +1,1 @@
+/Users/jereldlim/Desktop/rareskills-solana/day_7/macro-demo/target/debug/macro-demo: /Users/jereldlim/Desktop/rareskills-solana/day_7/macro-demo/src/lib.rs /Users/jereldlim/Desktop/rareskills-solana/day_7/macro-demo/src/main.rs
