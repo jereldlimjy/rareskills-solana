@@ -11,11 +11,11 @@ describe("day_13", () => {
   it("Is initialized!", async () => {
     // Add your test here.
     const myEventListener = program.addEventListener("myEvent", (event, slot) => {
-      console.log(`my event ${event} occurred at slot ${slot}`);
+      console.log(`my event ${event.value} occurred at slot ${slot}`);
     });
   
     const stringEventListener = program.addEventListener("stringEvent", (event, slot) => {
-      console.log(`my event ${event} occurred at slot ${slot}`);
+      console.log(`my event ${event.value} occurred at slot ${slot}`);
     });
 
     await program.methods.initialize(new anchor.BN(777), "Hello World").rpc();
