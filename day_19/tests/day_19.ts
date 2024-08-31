@@ -8,9 +8,28 @@ describe("day_19", () => {
 
   const program = anchor.workspace.Day19 as Program<Day19>;
 
-  it("Is initialized!", async () => {
+  it("Initialise and set value", async () => {
     // Add your test here.
-    const tx = await program.methods.initialize().rpc();
-    console.log("Your transaction signature", tx);
+    const key = new anchor.BN(3);
+    const value = new anchor.BN(777);
+
+    const seeds = [key.toArrayLike(Buffer, "le", 8)];
+
+    const [valueAccount, _bump] = anchor.web3.PublicKey.findProgramAddressSync(seeds, program.programId);
+
+    // const tx = await program.methods.initialize(key).accounts({
+    //   myMapping: valueAccount
+    // }).rpc();
+
+    // console.log("Your transaction signature", tx);
+
+    const setTx = await program.methods.set(key, value).accounts({
+      myStorage: valueAccount
+    }).rpc();
+
+    console.log("Your set transaction signature", setTx);
+
+    const storageAccount = await program.account.myStorage.fetch(valueAccount);
+    console.log(`storage account value: ${storageAccount.val}`);
   });
 });
