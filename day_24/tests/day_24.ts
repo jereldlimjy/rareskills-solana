@@ -25,7 +25,7 @@ describe("day_24", () => {
   // for alice and bob exercise
   // it("Is initialized!", async () => {
   //   // get address of storage account
-  //   const [myStorageAddress, _bumps] = anchor.web3.PublicKey.findProgramAddressSync([], program.programId);
+  //   const [myStorageAddress, _bump] = anchor.web3.PublicKey.findProgramAddressSync([], program.programId);
 
   //   // generate new keyPair
   //   const keyPair = anchor.web3.Keypair.generate();
@@ -42,7 +42,7 @@ describe("day_24", () => {
 
   // it("Updates storage!", async () => {
   //   // get address of storage account
-  //   const [myStorageAddress, _bumps] = anchor.web3.PublicKey.findProgramAddressSync([], program.programId);
+  //   const [myStorageAddress, _bump] = anchor.web3.PublicKey.findProgramAddressSync([], program.programId);
 
   //   // generate new keyPair
   //   const keyPair = anchor.web3.Keypair.generate();
@@ -72,7 +72,7 @@ describe("day_24", () => {
 
     // get address of PDAs
     const [tokenAccount, _] = anchor.web3.PublicKey.findProgramAddressSync(tomSeeds, program.programId);
-    const [receiverTokenAccount, _bumps] =  anchor.web3.PublicKey.findProgramAddressSync(dickSeeds, program.programId);
+    const [receiverTokenAccount, _bump] =  anchor.web3.PublicKey.findProgramAddressSync(dickSeeds, program.programId);
 
     // fund tom and dick
     await airdrop(tom.publicKey);

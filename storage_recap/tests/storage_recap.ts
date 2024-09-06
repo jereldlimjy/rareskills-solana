@@ -7,7 +7,7 @@ describe("storage_recap", () => {
   anchor.setProvider(anchor.AnchorProvider.env());
 
   const program = anchor.workspace.StorageRecap as Program<StorageRecap>;
-  const [storageAccountAddress, _bumps] = anchor.web3.PublicKey.findProgramAddressSync([], program.programId);
+  const [storageAccountAddress, _bump] = anchor.web3.PublicKey.findProgramAddressSync([], program.programId);
 
   // it("Is initialized!", async () => {
   //   const tx = await program.methods.initialize().accounts({
